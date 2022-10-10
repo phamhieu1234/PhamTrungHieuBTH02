@@ -1,6 +1,7 @@
 using System.Data;
 using System.ComponentModel.DataAnnotations;
-namespace PhamTrungHieuBTH02.Models{
+namespace PhamTrungHieuBTH02.Models
+{
     public class Person
     {
         public string? ID {get; set;}
