@@ -31,14 +31,14 @@ namespace PhamTrungHieuBTH02.Controllers
         {
             if (id == null || _context.Student == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var student = await _context.Student
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (student == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(student);
@@ -55,7 +55,7 @@ namespace PhamTrungHieuBTH02.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,StudentName")] Student student)
+        public async Task<IActionResult> Create([Bind("Address,ID,StudentName,SĐT")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -71,13 +71,13 @@ namespace PhamTrungHieuBTH02.Controllers
         {
             if (id == null || _context.Student == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var student = await _context.Student.FindAsync(id);
             if (student == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
             return View(student);
         }
@@ -87,11 +87,11 @@ namespace PhamTrungHieuBTH02.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("ID,StudentName")] Student student)
+        public async Task<IActionResult> Edit(string id, [Bind("Address,ID,StudentName,SĐT")] Student student)
         {
             if (id != student.ID)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             if (ModelState.IsValid)
@@ -105,7 +105,7 @@ namespace PhamTrungHieuBTH02.Controllers
                 {
                     if (!StudentExists(student.ID))
                     {
-                        return NotFound();
+                        return View("NotFound");
                     }
                     else
                     {
@@ -122,14 +122,14 @@ namespace PhamTrungHieuBTH02.Controllers
         {
             if (id == null || _context.Student == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var student = await _context.Student
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (student == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(student);

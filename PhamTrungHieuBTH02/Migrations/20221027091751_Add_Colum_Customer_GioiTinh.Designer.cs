@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace PhamTrungHieuBTH02.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
-    partial class MvcMovieContextModelSnapshot : ModelSnapshot
+    [Migration("20221027091751_Add_Colum_Customer_GioiTinh")]
+    partial class Add_Colum_Customer_GioiTinh
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.9");
@@ -92,10 +94,6 @@ namespace PhamTrungHieuBTH02.Migrations
                     b.Property<string>("StudentName")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("SĐT")
-                        .IsRequired()
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 
