@@ -14,7 +14,7 @@ namespace PhamTrungHieuBTH02.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.9");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
 
             modelBuilder.Entity("PhamTrungHieuBTH02.Models.Customer", b =>
                 {
@@ -93,9 +93,9 @@ namespace PhamTrungHieuBTH02.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("SĐT")
+                    b.Property<string>("SĐT")
                         .IsRequired()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("ID");
 

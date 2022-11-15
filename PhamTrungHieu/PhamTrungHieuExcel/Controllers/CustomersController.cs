@@ -27,12 +27,13 @@ namespace BaiThucHanhExcel.Controllers
             return View(model);
         }
 
+
         //Action trả về view thêm mới danh sách sinh viên
         public IActionResult Create()
         {
             return View();
         }
-
+      
         //Action xử lý dữ liệu sinh viên gửi lên từ view và lưu vào database
         [HttpPost]
         public async Task<IActionResult> Create(Customers std)
