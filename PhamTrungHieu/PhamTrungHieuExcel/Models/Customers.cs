@@ -5,5 +5,6 @@ namespace PhamTrungHieuExcel.Models
         public string? CustomersID { get; set; }
         public string? CustomersName { get; set; }
         public string? CustomersAddress { get; set; }
+        public string? FacultyID { get; internal set; }
     }
 }

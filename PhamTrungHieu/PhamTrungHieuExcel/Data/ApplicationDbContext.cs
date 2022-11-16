@@ -20,6 +20,8 @@ using PhamTrungHieuExcel.Models;
         public DbSet<PhamTrungHieuExcel.Models.Employee> Employee { get; set; } = default!;
 
         public DbSet<PhamTrungHieuExcel.Models.Customers> Customers { get; set; } = default!;
+ 
+          public DbSet<PhamTrungHieuExcel.Models.Faculty> Faculty { get; set; } = default!;
 
         
 
