@@ -15,7 +15,7 @@ namespace PhamTrungHieuExcel.Models.Process
             //tang phan tu so len 1 don vị
             int intPart = (Convert.ToInt32(numPart)+1);
             //bổ sung cac ky tu 0 con thieu
-            for (int i = 0; i <numPart.Length - intPart.ToString().Length;i++);
+            for (int i = 0; i <numPart.Length - intPart.ToString().Length;i++)
             {
                 strPart +="0";
             }

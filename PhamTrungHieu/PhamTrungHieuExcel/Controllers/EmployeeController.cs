@@ -33,12 +33,15 @@ namespace BaiThucHanhExcel.Controllers
         //Action trả về view thêm mới danh sách sinh viên
         public IActionResult Create()
         {
+             ViewData["FacultyID"] = new SelectList(_context.Faculty, "FacultyID", "FacultyID");
             return View();
+           
         }
 
         //Action xử lý dữ liệu sinh viên gửi lên từ view và lưu vào database
         [HttpPost]
-        public async Task<IActionResult> Create(Employee std)
+        [ValidateAntiForgeryToken]
+                public async Task<IActionResult> Create([Bind("StudentID,StudentName,StudentAddress,FacultyID")] Student std)
         {
             if(ModelState.IsValid)
             {
@@ -46,6 +49,7 @@ namespace BaiThucHanhExcel.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["FacultyID"] = new SelectList(_context.Faculty, "FacultyID", "FacultyID", std.FacultyID);
             return View();
         }
 
